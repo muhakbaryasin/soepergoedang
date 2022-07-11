@@ -8,6 +8,7 @@ import java.util.Date;
 
 
 @Table(name = "users")
+@Entity
 public class User extends BaseEntity {
     @Column(name = "user_name", nullable = false, length = 64)
     private String userName;
@@ -16,13 +17,13 @@ public class User extends BaseEntity {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_role_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_role_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private UserRole userRole;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_status_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_status_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private UserStatus userStatus;
 

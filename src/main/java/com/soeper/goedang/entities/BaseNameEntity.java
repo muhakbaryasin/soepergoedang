@@ -1,7 +1,9 @@
 package com.soeper.goedang.entities;
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 public class BaseNameEntity extends BaseEntity {
     @Column(name = "name", length = 32)
     private String name;
