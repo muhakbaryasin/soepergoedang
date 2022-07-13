@@ -14,7 +14,7 @@ public class UserServiceTest {
     private UserService userService;
 
     @Test
-    public void add_get_remove_Customer() {
+    public void add_get_remove_User() {
         long count = userService.count();
         User user = new User();
         user.setUserName("test");
@@ -23,7 +23,7 @@ public class UserServiceTest {
         user.setCreatedAt(new Date());
         user.setUpdatedAt(new Date());
 
-        user = userService.add(user);
+        user = userService.save(user);
         Assertions.assertEquals(count + 1, userService.count());
         Assertions.assertTrue(user.getId() > 0);
         userService.remove(user.getId());

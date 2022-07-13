@@ -1,0 +1,2 @@
+ALTER TABLE `products` ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`packet_package_type_id`) REFERENCES `packet_package_types`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `products` ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`content_product_id`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;

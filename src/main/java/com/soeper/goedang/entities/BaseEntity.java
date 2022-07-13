@@ -9,13 +9,13 @@ public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Integer id;
+    protected Integer id;
 
     @Column(name = "created_at", nullable = false)
-    private Date createdAt;
+    protected Date createdAt;
 
     @Column(name = "updated_at", nullable = false)
-    private Date updatedAt;
+    protected Date updatedAt;
 
     public Integer getId() {
         return id;

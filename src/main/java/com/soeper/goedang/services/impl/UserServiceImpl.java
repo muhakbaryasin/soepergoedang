@@ -13,7 +13,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public User add(User user) {
+    public User save(User user) {
         return userDao.save(user);
     }
 
@@ -24,8 +24,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User remove(int id) {
-        User user = userDao.getReferenceById(id);
-        userDao.delete(user);
+        User user = get(id);
+
+        if (user != null)
+            userDao.delete(user);
 
         return user;
     }

@@ -5,8 +5,8 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class BaseNameEntity extends BaseEntity {
-    @Column(name = "name", length = 32)
-    private String name;
+    @Column(name = "name", length = 32, nullable = false)
+    protected String name;
 
     public String getName() {
         return name;
