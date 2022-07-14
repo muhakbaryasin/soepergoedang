@@ -1,5 +1,7 @@
 package com.soeper.goedang.entities;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -7,7 +9,8 @@ import java.util.Date;
 @MappedSuperclass
 public class BaseEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     @Column(name = "id")
     protected Integer id;
 
