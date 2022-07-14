@@ -1,0 +1,1 @@
+CREATE TABLE `product_attribute_values` ( `id` INT NOT NULL AUTO_INCREMENT , `product_id` INT NOT NULL, `product_attribute_name_id` INT NOT NULL, `values` TEXT NOT NULL, `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, `updated_at` TIMESTAMP NULL DEFAULT NULL, PRIMARY KEY (`id`));
