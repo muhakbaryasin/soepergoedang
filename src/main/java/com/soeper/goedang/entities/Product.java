@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 
 @Entity
+@Table(name = "products")
 public class Product extends BaseEntity {
     @Column(name = "name", length = 512, nullable = false)
     private String name;
