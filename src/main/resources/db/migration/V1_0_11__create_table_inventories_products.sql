@@ -1,0 +1,3 @@
+CREATE TABLE `inventories_products` ( `id` INT NOT NULL , `inventory_id` INT NOT NULL , `product_id` INT NOT NULL , `quantity` INT NOT NULL , `price` INT UNSIGNED NOT NULL , `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `updated_at` TIMESTAMP NULL , PRIMARY KEY (`id`));
+ALTER TABLE `inventories_products` ADD CONSTRAINT `inventories_products_ibfk_1` FOREIGN KEY (`inventory_id`) REFERENCES `inventories`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `inventories_products` ADD CONSTRAINT `inventories_products_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;

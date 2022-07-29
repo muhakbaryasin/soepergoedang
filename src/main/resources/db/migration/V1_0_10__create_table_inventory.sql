@@ -1,0 +1,2 @@
+CREATE TABLE `inventories` ( `id` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(64) NOT NULL , `inventory_type_id` INT NULL, `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , `updated_at` TIMESTAMP NULL DEFAULT NULL , PRIMARY KEY (`id`));
+ALTER TABLE `inventories` ADD CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`inventory_type_id`) REFERENCES `inventory_types`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
